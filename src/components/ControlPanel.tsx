@@ -1,13 +1,25 @@
-import type { ColorTheme, RepresentationType, CardAspectRatio } from '../types'
+import type {
+  ColorTheme,
+  RepresentationType,
+  CardAspectRatio,
+  CardThemeMode,
+  CardResolution,
+} from '../types'
 
 interface ControlPanelProps {
   colorTheme: ColorTheme
   representation: RepresentationType
   aspectRatio: CardAspectRatio
+  cardTheme: CardThemeMode
+  cardResolution: CardResolution
+  includeDetails: boolean
   isAlphaFold: boolean
   onColorChange(t: ColorTheme): void
   onReprChange(r: RepresentationType): void
   onAspectRatioChange(a: CardAspectRatio): void
+  onCardThemeChange(t: CardThemeMode): void
+  onCardResolutionChange(r: CardResolution): void
+  onIncludeDetailsChange(v: boolean): void
   onGenerateCard(): void
   onResetCamera(): void
   isLoading: boolean
@@ -35,14 +47,30 @@ const ASPECT_OPTIONS: { value: CardAspectRatio; label: string; sub: string }[] =
   { value: 'portrait',   label: 'A4',      sub: 'Paper figure' },
 ]
 
+const CARD_THEME_OPTIONS: { value: CardThemeMode; label: string; sub: string }[] = [
+  { value: 'dark', label: 'Dark', sub: 'Slides / social' },
+  { value: 'light', label: 'Light', sub: 'Paper friendly' },
+]
+
+const CARD_RESOLUTION_OPTIONS: { value: CardResolution; label: string; sub: string }[] = [
+  { value: 'standard', label: 'Standard', sub: 'Faster export' },
+  { value: 'hd', label: 'HD', sub: '2x resolution' },
+]
+
 export default function ControlPanel({
   colorTheme,
   representation,
   aspectRatio,
+  cardTheme,
+  cardResolution,
+  includeDetails,
   isAlphaFold,
   onColorChange,
   onReprChange,
   onAspectRatioChange,
+  onCardThemeChange,
+  onCardResolutionChange,
+  onIncludeDetailsChange,
   onGenerateCard,
   onResetCamera,
   isLoading,
@@ -130,6 +158,70 @@ export default function ControlPanel({
             </button>
           ))}
         </div>
+      </section>
+
+      <section>
+        <h3 className="text-xs uppercase tracking-widest text-white/40 mb-3">
+          Card theme
+        </h3>
+        <div className="grid grid-cols-2 gap-2">
+          {CARD_THEME_OPTIONS.map(({ value, label, sub }) => (
+            <button
+              key={value}
+              onClick={() => onCardThemeChange(value)}
+              className={`
+                px-3 py-2 rounded-lg text-sm transition-colors duration-150 text-left
+                ${cardTheme === value
+                  ? 'bg-cyan-500/20 text-cyan-400 ring-1 ring-cyan-500/50'
+                  : 'text-white/70 hover:bg-white/5 hover:text-white'}
+              `}
+            >
+              <div>{label}</div>
+              <div className="text-xs opacity-60">{sub}</div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 className="text-xs uppercase tracking-widest text-white/40 mb-3">
+          Resolution
+        </h3>
+        <div className="grid grid-cols-2 gap-2">
+          {CARD_RESOLUTION_OPTIONS.map(({ value, label, sub }) => (
+            <button
+              key={value}
+              onClick={() => onCardResolutionChange(value)}
+              className={`
+                px-3 py-2 rounded-lg text-sm transition-colors duration-150 text-left
+                ${cardResolution === value
+                  ? 'bg-cyan-500/20 text-cyan-400 ring-1 ring-cyan-500/50'
+                  : 'text-white/70 hover:bg-white/5 hover:text-white'}
+              `}
+            >
+              <div>{label}</div>
+              <div className="text-xs opacity-60">{sub}</div>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 className="text-xs uppercase tracking-widest text-white/40 mb-3">
+          Export content
+        </h3>
+        <label className="flex items-center justify-between px-3 py-2 rounded-lg border border-white/10">
+          <span className="text-sm text-white/70">Show details</span>
+          <input
+            type="checkbox"
+            checked={includeDetails}
+            onChange={e => onIncludeDetailsChange(e.target.checked)}
+            className="accent-cyan-500"
+          />
+        </label>
+        <p className="mt-2 text-xs text-white/35">
+          Liang Lab branding is always included.
+        </p>
       </section>
 
       {/* ── Actions ──────────────────────────────────────────────── */}

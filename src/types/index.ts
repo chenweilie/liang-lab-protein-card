@@ -13,6 +13,8 @@ export type RepresentationType =
   | 'ribbon'
 
 export type CardAspectRatio = 'square' | 'widescreen' | 'portrait'
+export type CardThemeMode = 'dark' | 'light'
+export type CardResolution = 'standard' | 'hd'
 
 export type StructureSource = 'pdb' | 'alphafold'
 
@@ -44,7 +46,10 @@ export interface ViewerState {
 
 export interface CardExportOptions {
   aspectRatio: CardAspectRatio
-  includeDescription: boolean
+  theme: CardThemeMode
+  resolution: CardResolution
+  includeDetails: boolean
+  includeBranding: true
 }
 
 /** Card dimensions in pixels */

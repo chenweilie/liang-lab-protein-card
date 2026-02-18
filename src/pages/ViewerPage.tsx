@@ -1,6 +1,14 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { useSearchParams, Link, Navigate } from 'react-router-dom'
-import type { ColorTheme, RepresentationType, CardAspectRatio, ProteinInfo } from '../types'
+import type {
+  ColorTheme,
+  RepresentationType,
+  CardAspectRatio,
+  ProteinInfo,
+  CardThemeMode,
+  CardResolution,
+  CardExportOptions,
+} from '../types'
 import { resolveProteinInfo } from '../services/api'
 import type { MolstarHandle } from '../components/MolstarViewer'
 import ControlPanel from '../components/ControlPanel'
@@ -18,6 +26,9 @@ export default function ViewerPage() {
   const [colorTheme, setColorTheme] = useState<ColorTheme>('chain-id')
   const [representation, setRepresentation] = useState<RepresentationType>('cartoon')
   const [aspectRatio, setAspectRatio] = useState<CardAspectRatio>('square')
+  const [cardTheme, setCardTheme] = useState<CardThemeMode>('dark')
+  const [cardResolution, setCardResolution] = useState<CardResolution>('standard')
+  const [includeDetails, setIncludeDetails] = useState(true)
 
   // ── Protein info ────────────────────────────────────────────────────────────
   const [proteinInfo, setProteinInfo] = useState<ProteinInfo | null>(null)
@@ -52,6 +63,13 @@ export default function ViewerPage() {
 
   const structureUrl = proteinInfo?.structureUrl ?? ''
   const isAlphaFold = proteinInfo?.source === 'alphafold'
+  const exportOptions: CardExportOptions = {
+    aspectRatio,
+    theme: cardTheme,
+    resolution: cardResolution,
+    includeDetails,
+    includeBranding: true,
+  }
 
   async function handleGenerateCard() {
     if (!molstarRef.current || !proteinInfo) return
@@ -182,10 +200,16 @@ export default function ViewerPage() {
           colorTheme={colorTheme}
           representation={representation}
           aspectRatio={aspectRatio}
+          cardTheme={cardTheme}
+          cardResolution={cardResolution}
+          includeDetails={includeDetails}
           isAlphaFold={isAlphaFold}
           onColorChange={setColorTheme}
           onReprChange={setRepresentation}
           onAspectRatioChange={setAspectRatio}
+          onCardThemeChange={setCardTheme}
+          onCardResolutionChange={setCardResolution}
+          onIncludeDetailsChange={setIncludeDetails}
           onGenerateCard={handleGenerateCard}
           onResetCamera={() => molstarRef.current?.resetCamera()}
           isLoading={viewerLoading}
@@ -197,7 +221,7 @@ export default function ViewerPage() {
         <CardExportModal
           screenshotFn={getScreenshot}
           proteinInfo={proteinInfo}
-          aspectRatio={aspectRatio}
+          exportOptions={exportOptions}
           onClose={() => setShowExport(false)}
         />
       )}
