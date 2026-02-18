@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
-import type { ProteinInfo, CardAspectRatio } from '../types'
+import type { ProteinInfo, CardExportOptions } from '../types'
 import { buildCard } from '../utils/cardExport'
 
 interface Props {
   screenshotFn: (width: number, height: number) => Promise<string>
   proteinInfo: ProteinInfo
-  aspectRatio: CardAspectRatio
+  exportOptions: CardExportOptions
   onClose(): void
 }
 
 export default function CardExportModal({
   screenshotFn,
   proteinInfo,
-  aspectRatio,
+  exportOptions,
   onClose,
 }: Props) {
   const [previewUrl, setPreviewUrl] = useState<string>('')
@@ -27,13 +27,13 @@ export default function CardExportModal({
         setError('')
 
         // Get 3D screenshot from Mol*
-        const { width, height } = getViewerDims(aspectRatio)
+        const { width, height } = getViewerDims(exportOptions)
         const raw3d = await screenshotFn(width, height)
 
         if (!raw3d) throw new Error('Failed to capture 3D view — please try again.')
 
         // Composite card
-        const cardUrl = await buildCard(raw3d, proteinInfo, aspectRatio)
+        const cardUrl = await buildCard(raw3d, proteinInfo, exportOptions)
         setPreviewUrl(cardUrl)
       } catch (e) {
         setError(String(e))
@@ -119,11 +119,13 @@ export default function CardExportModal({
 }
 
 /** Compute viewer screenshot dimensions for a given aspect ratio */
-function getViewerDims(ratio: CardAspectRatio): { width: number; height: number } {
-  // We always capture at high resolution then composite
-  return ratio === 'widescreen'
+function getViewerDims(options: CardExportOptions): { width: number; height: number } {
+  const ratio = options.aspectRatio
+  const base = ratio === 'widescreen'
     ? { width: 1920, height: 1080 }
     : ratio === 'portrait'
       ? { width: 1240, height: 1754 }
       : { width: 1200, height: 1200 }
+  const scale = options.resolution === 'hd' ? 2 : 1
+  return { width: base.width * scale, height: base.height * scale }
 }
