@@ -99,10 +99,11 @@ function SearchCard() {
           placeholder="e.g. 1TIM or P00533"
           className="
             flex-1 h-8 px-3 rounded-lg text-sm
-            bg-white/6 border border-white/10
-            text-white placeholder-white/25
-            focus:outline-none focus:ring-1 focus:ring-cyan-500/50
+            bg-navy-700/95 border border-white/20
+            text-white placeholder-white/55 caret-cyan-300
+            focus:outline-none focus:ring-1 focus:ring-cyan-500/70 focus:border-cyan-500/70
           "
+          style={{ colorScheme: 'dark' }}
         />
         <button
           type="submit"
@@ -114,4 +115,3 @@ function SearchCard() {
     </div>
   )
 }
-
