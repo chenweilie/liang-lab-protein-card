@@ -1,17 +1,17 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
-import { useSearchParams, useNavigate } from 'react-router-dom'
+import { useSearchParams, Link, Navigate } from 'react-router-dom'
 import type { ColorTheme, RepresentationType, CardAspectRatio, ProteinInfo } from '../types'
 import { resolveProteinInfo } from '../services/api'
 import type { MolstarHandle } from '../components/MolstarViewer'
 import ControlPanel from '../components/ControlPanel'
 import CardExportModal from '../components/CardExportModal'
+import ProfessorBio from '../components/ProfessorBio'
 
 // Lazy-load Mol* viewer so the homepage bundle stays lightweight
 const MolstarViewer = lazy(() => import('../components/MolstarViewer'))
 
 export default function ViewerPage() {
   const [searchParams] = useSearchParams()
-  const navigate = useNavigate()
   const inputId = searchParams.get('id') ?? ''
 
   // ── Viewer state ────────────────────────────────────────────────────────────
@@ -47,8 +47,7 @@ export default function ViewerPage() {
 
   // ── No ID supplied — redirect home ──────────────────────────────────────────
   if (!inputId) {
-    navigate('/')
-    return null
+    return <Navigate to="/" replace />
   }
 
   const structureUrl = proteinInfo?.structureUrl ?? ''
@@ -59,9 +58,9 @@ export default function ViewerPage() {
     setShowExport(true)
   }
 
-  async function getScreenshot(): Promise<string> {
+  async function getScreenshot(width: number, height: number): Promise<string> {
     if (!molstarRef.current) return ''
-    return molstarRef.current.screenshot(1200, 1200)
+    return molstarRef.current.screenshot(width, height)
   }
 
   return (
@@ -98,12 +97,39 @@ export default function ViewerPage() {
           </div>
         )}
 
-        {/* Error states */}
+        {/* Protein not found — full-pane friendly state */}
         {infoError && (
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6 max-w-sm text-center">
-              <p className="text-red-400 font-semibold mb-1">Failed to load protein</p>
-              <p className="text-red-300/60 text-sm">{infoError}</p>
+          <div className="absolute inset-0 z-20 overflow-y-auto bg-navy-900/95 backdrop-blur-sm flex items-start justify-center">
+            <div className="w-full max-w-xl px-6 py-12 flex flex-col items-center gap-8">
+              {/* Error header */}
+              <div className="text-center">
+                <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-4">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7 text-red-400">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <p className="font-mono text-red-400 text-xs tracking-widest uppercase mb-2">
+                  Structure Not Found
+                </p>
+                <h2 className="text-white font-bold text-2xl mb-2">
+                  "{inputId}" couldn't be loaded
+                </h2>
+                <p className="text-white/40 text-sm leading-relaxed max-w-sm mx-auto">
+                  Please verify the PDB ID or UniProt accession and try again.
+                  PDB IDs are 4 characters starting with a digit (e.g.&nbsp;5CZR).
+                </p>
+                <Link
+                  to="/"
+                  className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500/15 text-cyan-400 hover:bg-cyan-500/25 transition-colors text-sm font-medium"
+                >
+                  ← Back to Home
+                </Link>
+              </div>
+
+              <div className="w-full h-px bg-white/8" />
+
+              <ProfessorBio />
             </div>
           </div>
         )}

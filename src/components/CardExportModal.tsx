@@ -3,7 +3,7 @@ import type { ProteinInfo, CardAspectRatio } from '../types'
 import { buildCard } from '../utils/cardExport'
 
 interface Props {
-  screenshotFn: () => Promise<string>
+  screenshotFn: (width: number, height: number) => Promise<string>
   proteinInfo: ProteinInfo
   aspectRatio: CardAspectRatio
   onClose(): void
@@ -28,7 +28,7 @@ export default function CardExportModal({
 
         // Get 3D screenshot from Mol*
         const { width, height } = getViewerDims(aspectRatio)
-        const raw3d = await screenshotFn()
+        const raw3d = await screenshotFn(width, height)
 
         if (!raw3d) throw new Error('Failed to capture 3D view — please try again.')
 
