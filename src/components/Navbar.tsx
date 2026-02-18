@@ -49,11 +49,12 @@ export default function Navbar() {
             placeholder="PDB ID or UniProt ID…"
             className="
               w-full h-8 pl-3 pr-10 rounded-lg text-sm
-              bg-white/6 border border-white/10
-              text-white placeholder-white/30
-              focus:outline-none focus:ring-1 focus:ring-cyan-500/60 focus:border-cyan-500/60
+              bg-navy-700/95 border border-white/20
+              text-white placeholder-white/55 caret-cyan-300
+              focus:outline-none focus:ring-1 focus:ring-cyan-500/70 focus:border-cyan-500/70
               transition-colors
             "
+          style={{ colorScheme: 'dark' }}
           />
           <button
             type="submit"

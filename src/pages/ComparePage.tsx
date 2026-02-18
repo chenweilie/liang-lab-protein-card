@@ -52,10 +52,11 @@ function ViewerPanel({ label, defaultId = '', colorTheme, representation, viewer
             placeholder="PDB or UniProt ID"
             className="
               flex-1 h-7 px-2 rounded text-xs
-              bg-white/6 border border-white/10
-              text-white placeholder-white/25
-              focus:outline-none focus:ring-1 focus:ring-cyan-500/50
+              bg-navy-700/95 border border-white/20
+              text-white placeholder-white/55 caret-cyan-300
+              focus:outline-none focus:ring-1 focus:ring-cyan-500/70 focus:border-cyan-500/70
             "
+            style={{ colorScheme: 'dark' }}
           />
           <button
             type="submit"

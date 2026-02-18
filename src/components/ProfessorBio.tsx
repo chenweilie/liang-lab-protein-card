@@ -19,8 +19,13 @@ export default function ProfessorBio() {
 
       <div className="flex flex-col sm:flex-row gap-5">
         {/* Avatar */}
-        <div className="w-20 h-20 shrink-0 rounded-2xl bg-gradient-to-br from-cyan-500/25 to-blue-600/30 border border-cyan-500/20 flex items-center justify-center">
-          <span className="text-2xl font-bold text-cyan-400 font-mono select-none">ZL</span>
+        <div className="w-24 h-24 shrink-0 rounded-2xl bg-navy-700 border border-cyan-500/20 overflow-hidden">
+          <img
+            src="/liang-zhao-xun.png"
+            alt="Professor Liang Zhao-Xun"
+            className="w-full h-full object-cover object-top"
+            loading="lazy"
+          />
         </div>
 
         <div className="flex flex-col gap-2 min-w-0">
