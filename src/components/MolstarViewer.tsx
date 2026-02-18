@@ -41,17 +41,19 @@ interface MolstarViewerProps {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyPlugin = any
 
+function getStructureComponents(plugin: AnyPlugin): AnyPlugin[] {
+  const structures = plugin.managers.structure.hierarchy.current.structures ?? []
+  return structures.flatMap((s: AnyPlugin) =>
+    Array.isArray(s?.components) ? s.components.filter(Boolean) : [],
+  )
+}
+
 // ─── Helper: apply colour theme to all representations ───────────────────────
 
 async function applyColorTheme(plugin: AnyPlugin, theme: ColorTheme) {
-  const structures = plugin.managers.structure.hierarchy.current.structures
-  // collect every StructureRepresentation3DRef
-  const reprs = structures.flatMap(
-    (s: AnyPlugin) =>
-      s.components?.flatMap((c: AnyPlugin) => c.representations ?? []) ?? [],
-  )
-  if (reprs.length === 0) return
-  await plugin.managers.structure.component.updateRepresentationsTheme(reprs, {
+  const components = getStructureComponents(plugin)
+  if (!components.length) return
+  await plugin.managers.structure.component.updateRepresentationsTheme(components, {
     color: theme,
   })
 }
@@ -70,23 +72,16 @@ async function applyRepresentation(
   repr: RepresentationType,
   colorTheme: ColorTheme,
 ) {
-  const structures = plugin.managers.structure.hierarchy.current.structures
-  if (!structures.length) return
+  const components = getStructureComponents(plugin)
+  if (!components.length) return
 
-  const components = structures.flatMap(
-    (s: AnyPlugin) => s.components ?? [],
-  )
+  const componentManager = plugin.managers.structure.component
+  const reprType = REPR_TO_MOLSTAR[repr]
 
-  // Clear existing representations
-  await plugin.managers.structure.component.clear(components)
-
-  // Add new representations for each component
-  for (const component of components) {
-    await plugin.managers.structure.component.addRepresentation(component, {
-      type: REPR_TO_MOLSTAR[repr],
-      color: colorTheme,
-    })
-  }
+  // Rebuild representation type for all current components, then re-apply color theme.
+  await componentManager.removeRepresentations(components)
+  await componentManager.addRepresentation(components, reprType)
+  await componentManager.updateRepresentationsTheme(components, { color: colorTheme })
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -224,13 +219,14 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
           const trajectory = await plugin.builders.structure.parseTrajectory(data, format)
           await plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default')
 
-          // After loading, apply chosen colour / repr
-          await applyColorTheme(plugin, colorTheme)
+          // After loading, apply chosen representation and color.
+          await applyRepresentation(plugin, representation, colorTheme)
           onLoaded?.()
         } catch (err) {
           onError?.(String(err))
         }
       })()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isReady, structureUrl])
 
@@ -270,4 +266,3 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
 )
 
 export default MolstarViewer
-
