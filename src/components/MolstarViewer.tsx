@@ -43,9 +43,17 @@ type AnyPlugin = any
 
 function getStructureComponents(plugin: AnyPlugin): AnyPlugin[] {
   const structures = plugin.managers.structure.hierarchy.current.structures ?? []
-  return structures.flatMap((s: AnyPlugin) =>
-    Array.isArray(s?.components) ? s.components.filter(Boolean) : [],
-  )
+  return structures.flatMap((s: AnyPlugin) => {
+    if (!Array.isArray(s?.components)) return []
+    return s.components
+      .filter((c: AnyPlugin) => Boolean(c?.cell?.transform?.ref))
+      .map((c: AnyPlugin) => ({
+        ...c,
+        representations: Array.isArray(c.representations)
+          ? c.representations.filter((r: AnyPlugin) => Boolean(r?.cell?.transform?.ref))
+          : [],
+      }))
+  })
 }
 
 // ─── Helper: apply colour theme to all representations ───────────────────────
@@ -79,7 +87,8 @@ async function applyRepresentation(
   const reprType = REPR_TO_MOLSTAR[repr]
 
   // Rebuild representation type for all current components, then re-apply color theme.
-  await componentManager.removeRepresentations(components)
+  const toRemove = components.flatMap((c: AnyPlugin) => c.representations ?? [])
+  if (toRemove.length) await plugin.managers.structure.hierarchy.remove(toRemove, true)
   await componentManager.addRepresentation(components, reprType)
   await componentManager.updateRepresentationsTheme(components, { color: colorTheme })
 }
@@ -102,7 +111,14 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
     const containerRef = useRef<HTMLDivElement>(null)
     const pluginRef = useRef<AnyPlugin | null>(null)
     const loadedUrlRef = useRef<string>('')
+    const opQueueRef = useRef<Promise<void>>(Promise.resolve())
     const [isReady, setIsReady] = useState(false)
+
+    function enqueue(task: () => Promise<void>) {
+      opQueueRef.current = opQueueRef.current.then(task).catch(err => {
+        onError?.(String(err))
+      })
+    }
 
     // ── Expose imperative handle ──────────────────────────────────────────────
     useImperativeHandle(ref, () => ({
@@ -206,40 +222,41 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
       const plugin = pluginRef.current
       loadedUrlRef.current = structureUrl
 
-      ;(async () => {
-        try {
-          await plugin.clear()
+      enqueue(async () => {
+        await plugin.clear()
 
-          const data = await plugin.builders.data.download(
-            { url: structureUrl, isBinary: false },
-            { state: { isGhost: true } },
-          )
+        const data = await plugin.builders.data.download(
+          { url: structureUrl, isBinary: false },
+          { state: { isGhost: true } },
+        )
 
-          const format = structureUrl.endsWith('.pdb') ? 'pdb' : 'mmcif'
-          const trajectory = await plugin.builders.structure.parseTrajectory(data, format)
-          await plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default')
+        const format = structureUrl.endsWith('.pdb') ? 'pdb' : 'mmcif'
+        const trajectory = await plugin.builders.structure.parseTrajectory(data, format)
+        await plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default')
 
-          // After loading, apply chosen representation and color.
-          await applyRepresentation(plugin, representation, colorTheme)
-          onLoaded?.()
-        } catch (err) {
-          onError?.(String(err))
-        }
-      })()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // After loading, apply chosen representation and color.
+        await applyRepresentation(plugin, representation, colorTheme)
+        onLoaded?.()
+      })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isReady, structureUrl])
 
     // ── Update colour theme ───────────────────────────────────────────────────
     useEffect(() => {
       if (!isReady || !pluginRef.current) return
-      applyColorTheme(pluginRef.current, colorTheme).catch(console.error)
+      const plugin = pluginRef.current
+      enqueue(async () => {
+        await applyColorTheme(plugin, colorTheme)
+      })
     }, [isReady, colorTheme])
 
     // ── Update representation ─────────────────────────────────────────────────
     useEffect(() => {
       if (!isReady || !pluginRef.current) return
-      applyRepresentation(pluginRef.current, representation, colorTheme).catch(console.error)
+      const plugin = pluginRef.current
+      enqueue(async () => {
+        await applyRepresentation(plugin, representation, colorTheme)
+      })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isReady, representation])
 
