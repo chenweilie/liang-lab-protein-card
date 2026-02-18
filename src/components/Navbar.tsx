@@ -70,6 +70,7 @@ export default function Navbar() {
       {/* Nav links */}
       <nav className="hidden sm:flex items-center gap-1 ml-auto">
         <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
         <NavLink to="/compare">Compare</NavLink>
       </nav>
 
