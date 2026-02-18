@@ -1,11 +1,8 @@
 import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import type { ColorTheme, RepresentationType, CardAspectRatio, ProteinInfo } from '../types'
+import type { ColorTheme, RepresentationType, ProteinInfo } from '../types'
 import { resolveProteinInfo } from '../services/api'
 import type { MolstarHandle } from '../components/MolstarViewer'
-import CardExportModal from '../components/CardExportModal'
-import { buildCard } from '../utils/cardExport'
-import { CARD_DIMENSIONS } from '../types'
 
 const MolstarViewer = lazy(() => import('../components/MolstarViewer'))
 
@@ -134,13 +131,6 @@ export default function ComparePage() {
 
   const refA = useRef<MolstarHandle>(null)
   const refB = useRef<MolstarHandle>(null)
-
-  const [infoA, setInfoA] = useState<ProteinInfo | null>(null)
-  const [infoB, setInfoB] = useState<ProteinInfo | null>(null)
-
-  // Keep track of infos for card export
-  // (panels manage their own info internally, we mirror it for the export button)
-  const [showExport, setShowExport] = useState<'A' | 'B' | null>(null)
 
   return (
     <div className="flex flex-col h-[calc(100vh-3.5rem)]">
