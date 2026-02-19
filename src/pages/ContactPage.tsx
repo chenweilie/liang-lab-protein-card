@@ -33,6 +33,16 @@ export default function ContactPage() {
                             Phone: (65) 6592 7736
                         </p>
                     </div>
+
+                    <div>
+                        <h3 className="font-bold text-gray-900 mb-1">Professional Profiles</h3>
+                        <ul className="space-y-1">
+                            <li><a href="https://dr.ntu.edu.sg/entities/person/Liang-Zhao-Xun" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline">NTU Faculty Profile</a></li>
+                            <li><a href="https://scholar.google.com/citations?user=F-DuOAkAAAAJ" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline">Google Scholar Profile</a></li>
+                            <li><a href="https://www.researchgate.net/profile/Zhao-Xun-Liang" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline">ResearchGate</a></li>
+                            <li><a href="https://sg.linkedin.com/in/zhao-xun-liang-45224b60" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline">LinkedIn</a></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="h-64 bg-gray-100 rounded border border-gray-200 overflow-hidden">

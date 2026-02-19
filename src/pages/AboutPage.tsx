@@ -39,7 +39,7 @@ export default function AboutPage() {
             <h2 className="text-white font-semibold mb-2">Background and stack</h2>
             <p className="text-white/60 text-sm leading-relaxed">
               The project is developed around Mol* for molecular visualization, React for UI
-              interaction, and Cloudflare Pages for deployment. It is tailored to Liang Lab research
+              interaction, and Cloudflare Pages for deployment. It is tailored to <a href="https://dr.ntu.edu.sg/entities/person/Liang-Zhao-Xun" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Liang Lab</a> research
               communication, especially c-di-GMP related structural biology work.
             </p>
           </article>
