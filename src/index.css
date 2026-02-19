@@ -1,91 +1,21 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── Base resets ─────────────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-navy-900;
+  }
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden; /* Prevent body scroll; each page manages its own */
+/* Custom Navy Color for academic theme */
+.text-navy-900 {
+  color: #0f172a; /* violent-900 substitute or adjust to specific navy */
 }
-
-#root {
-  height: 100%;
-  overflow-y: auto;
-}
-
-/* Keep input contrast readable across browsers */
-input, textarea {
-  color: #ffffff;
-}
-
-input::placeholder, textarea::placeholder {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* ── Mol* canvas overrides ───────────────────────────────────────────────── */
-/* Hide Mol*'s default loading spinner and watermark */
-.msp-plugin .msp-logo,
-.msp-plugin .msp-sequence-wrapper,
-.msp-plugin .msp-state-tree,
-.msp-plugin .msp-controls-panel {
-  display: none !important;
-}
-
-/* Make the Mol* canvas fill its container */
-.msp-plugin {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.msp-plugin .msp-layout-main {
-  position: absolute !important;
-  inset: 0 !important;
-}
-
-/* ── Webkit autofill — prevent white flash on dark inputs ────────────────── */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0 0 0 40px #1a1a2e inset !important;
-  box-shadow: 0 0 0 40px #1a1a2e inset !important;
-  caret-color: #ffffff;
-}
-
-/* ── Custom scrollbar ────────────────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* ── Utility: line clamp (fallback for older browsers) ───────────────────── */
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.line-clamp-1 {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.bg-navy-900 {
+  background-color: #0f172a;
 }

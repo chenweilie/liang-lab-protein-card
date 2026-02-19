@@ -82,7 +82,7 @@ export default function ViewerPage() {
   }
 
   return (
-    <div className="flex h-[calc(100vh-3.5rem)] overflow-hidden">
+    <div className="flex h-[calc(100vh-4rem)] overflow-hidden bg-navy-900 text-white">
 
       {/* ── Left: 3D viewer ──────────────────────────────────────────────── */}
       <div className="flex-1 relative overflow-hidden">
@@ -123,8 +123,8 @@ export default function ViewerPage() {
               <div className="text-center">
                 <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-4">
                   <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7 text-red-400">
-                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
+                    <path d="M12 8v4M12 16h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
                 </div>
                 <p className="font-mono text-red-400 text-xs tracking-widest uppercase mb-2">

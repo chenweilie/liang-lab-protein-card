@@ -69,10 +69,10 @@ async function applyColorTheme(plugin: AnyPlugin, theme: ColorTheme) {
 // ─── Helper: rebuild representations ─────────────────────────────────────────
 
 const REPR_TO_MOLSTAR: Record<RepresentationType, string> = {
-  cartoon:          'cartoon',
+  cartoon: 'cartoon',
   'gaussian-surface': 'gaussian-surface',
   'ball-and-stick': 'ball-and-stick',
-  ribbon:           'backbone',   // Mol* uses "backbone" for ribbon-like
+  ribbon: 'backbone',   // Mol* uses "backbone" for ribbon-like
 }
 
 async function applyRepresentation(
@@ -152,58 +152,52 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
       if (!containerRef.current) return
       let disposed = false
 
-      ;(async () => {
-        try {
-          // Dynamic import keeps Mol* out of the initial bundle
-          const { createPluginUI } = await import('molstar/lib/mol-plugin-ui')
-          const { DefaultPluginUISpec } = await import('molstar/lib/mol-plugin-ui/spec')
-          const { renderReact18 } = await import('molstar/lib/mol-plugin-ui/react18')
-          // @ts-expect-error — Mol* ships SCSS only; Vite+sass handles the import
-          await import('molstar/lib/mol-plugin-ui/skin/dark.scss')
+        ; (async () => {
+          try {
+            // Dynamic import keeps Mol* out of the initial bundle
+            const { createPluginUI } = await import('molstar/lib/mol-plugin-ui')
+            const { DefaultPluginUISpec } = await import('molstar/lib/mol-plugin-ui/spec')
+            const { renderReact18 } = await import('molstar/lib/mol-plugin-ui/react18')
+            // @ts-expect-error — Mol* ships SCSS only; Vite+sass handles the import
+            await import('molstar/lib/mol-plugin-ui/skin/dark.scss')
 
-          if (disposed || !containerRef.current) return
+            if (disposed || !containerRef.current) return
 
-          const plugin = await createPluginUI({
-            target: containerRef.current,
-            render: renderReact18,
-            spec: {
-              ...DefaultPluginUISpec(),
-              layout: {
-                initial: {
-                  isExpanded: false,
-                  showControls: false,
-                  regionState: {
-                    top: 'hidden',
-                    left: 'hidden',
-                    right: 'hidden',
-                    bottom: 'hidden',
+            const plugin = await createPluginUI({
+              target: containerRef.current,
+              render: renderReact18,
+              spec: {
+                ...DefaultPluginUISpec(),
+                layout: {
+                  initial: {
+                    isExpanded: false,
+                    showControls: false,
                   },
                 },
+                components: {
+                  remoteState: 'none',
+                },
               },
-              components: {
-                remoteState: 'none',
-              },
-            },
-          })
+            })
 
-          if (disposed) {
-            plugin.dispose()
-            return
+            if (disposed) {
+              plugin.dispose()
+              return
+            }
+
+            // Set background colour using Mol*'s Color branded type
+            if (plugin.canvas3d) {
+              const { Color } = await import('molstar/lib/mol-util/color')
+              const bg = Color.fromHexStyle(background)
+              plugin.canvas3d.setProps({ renderer: { backgroundColor: bg } })
+            }
+
+            pluginRef.current = plugin
+            setIsReady(true)
+          } catch (err) {
+            onError?.(String(err))
           }
-
-          // Set background colour using Mol*'s Color branded type
-          if (plugin.canvas3d) {
-            const { Color } = await import('molstar/lib/mol-util/color')
-            const bg = Color.fromHexStyle(background)
-            plugin.canvas3d.setProps({ renderer: { backgroundColor: bg } })
-          }
-
-          pluginRef.current = plugin
-          setIsReady(true)
-        } catch (err) {
-          onError?.(String(err))
-        }
-      })()
+        })()
 
       return () => {
         disposed = true
@@ -211,7 +205,7 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
         pluginRef.current = null
         setIsReady(false)
       }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // ── Load / reload structure when URL changes ──────────────────────────────
@@ -238,7 +232,7 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
         await applyRepresentation(plugin, representation, colorTheme)
         onLoaded?.()
       })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isReady, structureUrl])
 
     // ── Update colour theme ───────────────────────────────────────────────────
@@ -257,7 +251,7 @@ const MolstarViewer = forwardRef<MolstarHandle, MolstarViewerProps>(
       enqueue(async () => {
         await applyRepresentation(plugin, representation, colorTheme)
       })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isReady, representation])
 
     return (

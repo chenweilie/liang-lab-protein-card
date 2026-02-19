@@ -134,7 +134,7 @@ export default function ComparePage() {
   const refB = useRef<MolstarHandle>(null)
 
   return (
-    <div className="flex flex-col h-[calc(100vh-3.5rem)]">
+    <div className="flex flex-col h-[calc(100vh-4rem)] bg-navy-900 text-white">
 
       {/* Toolbar */}
       <div className="flex items-center gap-3 px-4 py-2 bg-navy-800 border-b border-white/8 shrink-0">
