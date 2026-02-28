@@ -1,17 +1,25 @@
 export default function ResearchPage() {
     return (
         <main className="min-h-screen bg-white">
-            <div className="bg-navy-900 text-white py-16 md:py-24 mb-12 relative overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-900 via-navy-900 to-navy-950"></div>
-                <div className="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col md:flex-row items-center gap-10">
-                    <div className="flex-1">
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Research</h1>
-                        <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+            <div className="bg-navy-950 text-white py-24 md:py-32 mb-16 relative overflow-hidden">
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="/images/hero-bg.png"
+                        alt="Research Background"
+                        className="w-full h-full object-cover opacity-40 mix-blend-screen"
+                    />
+                    {/* Gradient Overlays for blending */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent md:w-3/4"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                </div>
+
+                <div className="container mx-auto px-6 max-w-5xl relative z-10">
+                    <div className="max-w-3xl">
+                        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-lg">Research</h1>
+                        <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-4 drop-shadow font-light">
                             Our research program integrates discovery-driven enzymology with pathway engineering and synthetic microbiology, and currently spans three interconnected areas.
                         </p>
-                    </div>
-                    <div className="hidden md:block w-48 shrink-0">
-                        <img src="/images/research/molecular-art.png" alt="Molecular structure representation" className="w-full h-auto drop-shadow-xl" />
                     </div>
                 </div>
             </div>
