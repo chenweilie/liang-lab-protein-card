@@ -16,7 +16,7 @@ export default function TeamPage() {
                     <h2 className="text-2xl font-bold mb-8 text-navy-900 border-b border-gray-200 pb-3">Principal Investigator</h2>
                     <div className="flex flex-col md:flex-row gap-8 items-start">
                         <div className="w-48 h-48 bg-gray-200 rounded-lg shrink-0 overflow-hidden shadow-md">
-                            <img src="/images/profile-pic.webp" alt="Professor Zhaoxun Liang" className="w-full h-full object-cover" />
+                            <img src="/images/team/pi.jpeg" alt="Professor Zhaoxun Liang" className="w-full h-full object-cover" />
                         </div>
                         <div>
                             <h3 className="text-3xl font-bold text-gray-900 mb-2">Zhao-Xun Liang</h3>
@@ -32,16 +32,16 @@ export default function TeamPage() {
                     <h2 className="text-2xl font-bold mb-8 text-navy-900 border-b border-gray-200 pb-3">Current Members</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { name: 'Wang Xuejiao', role: 'Research Fellow', img: 'wang-xuejiao_research-fellow.tmb-thumb160.jpg' },
-                            { name: 'Hartono Candra', role: 'Research Fellow', img: 'hartono-candra_research-fellow.tmb-thumb160.jpg' },
-                            { name: 'Tan Swee Ching', role: 'Research Assistant', img: 'tan-swee-ching_research-assistant.tmb-thumb160.jpeg' },
-                            { name: 'Chang Shu Ting', role: 'Research Assistant', img: 'chang-shu-ting_research-assistant.tmb-thumb160.jpg' },
-                            { name: 'Sirus Kongjaroon', role: 'Research Assistant', img: 'sirus-kongjaroon_research-assistant.tmb-thumb160.jpg' },
-                            { name: 'Liao Yanghui', role: 'PhD Student', img: 'liao-yanghui_phd-student.tmb-thumb160.jpeg' },
-                            { name: 'Huang Huawei', role: 'PhD Student', img: 'huang-huawei_phd-student.tmb-thumb160.jpg' },
-                            { name: 'Srashti Khandelwal', role: 'PhD Student', img: 'srashti-khandelwal_phd-student.tmb-thumb160.jpg' },
-                            { name: 'Sun Yunke', role: 'PhD Student', img: 'sun-yunke_phd-student.tmb-thumb160.jpg' },
-                            { name: 'You Jiaqi', role: 'PhD Student', img: 'you-jiaqi_phd-student.tmb-thumb160.jpg' },
+                            { name: 'Wang Xuejiao', role: 'Research Fellow', img: 'member-1.jpeg' },
+                            { name: 'Hartono Candra', role: 'Research Fellow', img: 'member-2.jpeg' },
+                            { name: 'Tan Swee Ching', role: 'Research Assistant', img: 'member-3.jpeg' },
+                            { name: 'Chang Shu Ting', role: 'Research Assistant', img: 'member-4.jpeg' },
+                            { name: 'Sirus Kongjaroon', role: 'Research Assistant', img: 'member-5.jpeg' },
+                            { name: 'Liao Yanghui', role: 'PhD Student', img: 'member-6.jpeg' },
+                            { name: 'Huang Huawei', role: 'PhD Student', img: 'member-7.jpeg' },
+                            { name: 'Srashti Khandelwal', role: 'PhD Student', img: 'member-8.jpeg' },
+                            { name: 'Sun Yunke', role: 'PhD Student', img: 'member-9.jpeg' },
+                            { name: 'You Jiaqi', role: 'PhD Student', img: 'member-10.jpeg' },
                         ].map((member, i) => (
                             <div key={i} className="flex gap-4 items-center bg-gray-50 p-4 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div className="w-16 h-16 bg-gray-200 rounded-full shrink-0 overflow-hidden border-2 border-white shadow-sm">

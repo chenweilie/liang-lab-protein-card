@@ -1,12 +1,18 @@
 export default function ResearchPage() {
     return (
         <main className="min-h-screen bg-white">
-            <div className="bg-navy-900 text-white py-16 md:py-20 mb-12">
-                <div className="container mx-auto px-6 max-w-5xl">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Research</h1>
-                    <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-                        Our research program integrates discovery-driven enzymology with pathway engineering and synthetic microbiology, and currently spans three interconnected areas.
-                    </p>
+            <div className="bg-navy-900 text-white py-16 md:py-24 mb-12 relative overflow-hidden">
+                <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-900 via-navy-900 to-navy-950"></div>
+                <div className="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col md:flex-row items-center gap-10">
+                    <div className="flex-1">
+                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Research</h1>
+                        <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+                            Our research program integrates discovery-driven enzymology with pathway engineering and synthetic microbiology, and currently spans three interconnected areas.
+                        </p>
+                    </div>
+                    <div className="hidden md:block w-48 shrink-0">
+                        <img src="/images/research/molecular-art.png" alt="Molecular structure representation" className="w-full h-auto drop-shadow-xl" />
+                    </div>
                 </div>
             </div>
 
@@ -55,11 +61,12 @@ export default function ResearchPage() {
                             </div>
                             <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
                                 <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
-                                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                                <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
                                     <li>Pathway engineering & DNA synthesis</li>
                                     <li>Modular recombination of BGCs</li>
                                     <li>"Non-natural" chemical scaffolds</li>
                                 </ul>
+                                <img src="/images/research/research-venn.png" alt="Research Venn Diagram" className="w-full h-auto mt-4 rounded-lg mix-blend-multiply" />
                             </div>
                         </div>
                     </section>
