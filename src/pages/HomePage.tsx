@@ -4,40 +4,36 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-navy-900 text-white py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-900 via-navy-900 to-navy-950"></div>
+      <section className="relative bg-navy-950 text-white py-32 md:py-48 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero-bg.png"
+            alt="Molecular Network Background"
+            className="w-full h-full object-cover opacity-40 mix-blend-screen"
+          />
+          {/* Gradient Overlays for blending to background color and text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent"></div>
+        </div>
+
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-
-            {/* Left Content */}
-            <div className="flex-1">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                Discovering Nature's <br className="hidden md:block" />
-                <span className="text-cyan-400">Chemical Repertoire</span>
-              </h1>
-              <p className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed mb-10">
-                Our lab focuses on discovering novel enzymes, pathways, and mechanisms involved in natural product biosynthesis and bacterial pathogenesis. We leverage genomics, biochemistry, and synthetic biology to awaken cryptic biosynthetic pathways, revealing new enzymatic strategies for building and modifying molecular scaffolds.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/research" className="bg-cyan-600 hover:bg-cyan-500 text-white font-medium py-3 px-8 rounded transition-colors duration-200 shadow-lg shadow-cyan-900/50">
-                  Explore Our Research
-                </Link>
-                <Link to="/publications" className="bg-transparent border border-gray-500 hover:border-white text-gray-300 hover:text-white font-medium py-3 px-8 rounded transition-all duration-200">
-                  Recent Publications
-                </Link>
-              </div>
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight drop-shadow-lg">
+              Discovering Nature's <br className="hidden md:block" />
+              <span className="text-cyan-400 drop-shadow-md">Chemical Repertoire</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-12 drop-shadow font-light">
+              Our lab focuses on discovering novel enzymes, pathways, and mechanisms involved in natural product biosynthesis and bacterial pathogenesis. We leverage genomics, biochemistry, and synthetic biology to awaken cryptic biosynthetic pathways, revealing new enzymatic strategies for building and modifying molecular scaffolds.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/research" className="bg-cyan-600 hover:bg-cyan-500 text-white font-medium py-4 px-10 rounded-lg transition-colors duration-200 shadow-lg shadow-cyan-900/50 text-lg">
+                Explore Our Research
+              </Link>
+              <Link to="/publications" className="bg-navy-900/40 backdrop-blur-md border border-gray-500 hover:border-white text-gray-200 hover:text-white font-medium py-4 px-10 rounded-lg transition-all duration-200 text-lg">
+                Recent Publications
+              </Link>
             </div>
-
-            {/* Right Image */}
-            <div className="flex-1 w-full max-w-md md:max-w-full relative">
-              <div className="absolute inset-0 bg-cyan-400/20 blur-3xl rounded-full"></div>
-              <img
-                src="/images/research/molecular-art.png"
-                alt="Molecular Network Art"
-                className="relative z-10 w-full h-auto object-contain drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-500"
-              />
-            </div>
-
           </div>
         </div>
       </section>
