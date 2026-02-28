@@ -1,16 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import ResearchPage from './pages/ResearchPage'
 import PublicationsPage from './pages/PublicationsPage'
 import TeamPage from './pages/TeamPage'
-import JoinPage from './pages/JoinPage'
 import ContactPage from './pages/ContactPage'
+import GalleryPage from './pages/GalleryPage'
 import ToolsPage from './pages/ToolsPage'
 import ViewerPage from './pages/ViewerPage'
 import ComparePage from './pages/ComparePage'
-import AboutPage from './pages/AboutPage'
 import NotFoundPage from './pages/NotFoundPage'
+import '@fontsource/inter';
 
 export default function App() {
   return (
@@ -21,14 +22,14 @@ export default function App() {
         <Route path="/research" element={<ResearchPage />} />
         <Route path="/publications" element={<PublicationsPage />} />
         <Route path="/team" element={<TeamPage />} />
-        <Route path="/join" element={<JoinPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/tools" element={<ToolsPage />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="/viewer" element={<ViewerPage />} />
         <Route path="/compare" element={<ComparePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </div>
   )
 }

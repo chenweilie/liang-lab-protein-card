@@ -11,6 +11,7 @@ export default defineConfig({
     // Mol* has no top-level entry; we import specific sub-paths, so exclude it
     // from pre-bundling to let Vite handle them on-demand.
     exclude: ['molstar'],
+    include: ['style-to-js', 'debug', 'extend'],
   },
   build: {
     chunkSizeWarningLimit: 20000,

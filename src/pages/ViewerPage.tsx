@@ -13,7 +13,6 @@ import { resolveProteinInfo } from '../services/api'
 import type { MolstarHandle } from '../components/MolstarViewer'
 import ControlPanel from '../components/ControlPanel'
 import CardExportModal from '../components/CardExportModal'
-import ProfessorBio from '../components/ProfessorBio'
 
 // Lazy-load Mol* viewer so the homepage bundle stays lightweight
 const MolstarViewer = lazy(() => import('../components/MolstarViewer'))
@@ -145,9 +144,7 @@ export default function ViewerPage() {
                 </Link>
               </div>
 
-              <div className="w-full h-px bg-white/8" />
 
-              <ProfessorBio />
             </div>
           </div>
         )}

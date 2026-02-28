@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import ProfessorBio from '../components/ProfessorBio'
 
 export default function NotFoundPage() {
   return (
@@ -26,7 +25,6 @@ export default function NotFoundPage() {
 
         <div className="w-full h-px bg-white/8 mb-10" />
 
-        <ProfessorBio />
 
       </main>
     </div>

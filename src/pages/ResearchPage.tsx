@@ -1,50 +1,96 @@
-
-import ProfileLayout from '../layouts/ProfileLayout';
-
 export default function ResearchPage() {
     return (
-        <ProfileLayout>
-            <h1 className="text-3xl font-bold text-navy-900 mb-8 pb-4 border-b border-gray-200">Research Focus</h1>
-
-            <div className="space-y-12">
-
-                {/* Area 1 */}
-                <section>
-                    <h2 className="text-2xl font-bold mb-4 text-cyan-700">Natural Product Biosynthesis & Enzyme Discovery</h2>
-                    <div className="flex flex-col md:flex-row gap-6 mb-4">
-                        <div className="md:w-full">
-                            <p className="text-gray-700 leading-relaxed mb-4">
-                                Our lab focuses on discovering novel enzymes, pathways, and mechanisms involved in natural product biosynthesis and bacterial pathogenesis. We leverage genomics, biochemistry, and synthetic biology to awaken cryptic biosynthetic pathways, revealing new enzymatic strategies for building and modifying molecular scaffolds.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Area 2 */}
-                <section>
-                    <h2 className="text-2xl font-bold mb-4 text-cyan-700">Synthetic Biology & Pathway Engineering</h2>
-                    <div className="flex flex-col md:flex-row gap-6 mb-4">
-                        <div className="md:w-full">
-                            <p className="text-gray-700 leading-relaxed mb-4">
-                                Building on nature's biosynthetic diversity, we also strive to engineer microbes to produce "unnatural" natural products. With powerful DNA synthesis and genome editing tools, we redesign entire pathways by combining enzymes from different systems or creating entirely new biochemical routes. This synthetic biology approach will expand nature's chemical repertoire for drug discovery applications.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Area 3 */}
-                <section>
-                    <h2 className="text-2xl font-bold mb-4 text-cyan-700">Cyclic Dinucleotide Signaling</h2>
-                    <div className="flex flex-col md:flex-row gap-6 mb-4">
-                        <div className="md:w-full">
-                            <p className="text-gray-700 leading-relaxed mb-4">
-                                Another focus of our research examines cyclic dinucleotides, key signaling molecules that regulate critical bacterial processes. These bacterial messengers function through sophisticated networks of enzymes and effector proteins, which ensure precise spatiotemporal control over bacterial behaviour. By elucidating these signaling pathways, we seek to uncover novel therapeutic targets for disrupting pathogenic infections, aiming to develop innovative antimicrobial and biofilm-disrupting strategies.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
+        <main className="min-h-screen bg-white">
+            <div className="bg-navy-900 text-white py-16 md:py-20 mb-12">
+                <div className="container mx-auto px-6 max-w-5xl">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Research</h1>
+                    <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
+                        Our research program integrates discovery-driven enzymology with pathway engineering and synthetic microbiology, and currently spans three interconnected areas.
+                    </p>
+                </div>
             </div>
-        </ProfileLayout>
+
+            <div className="container mx-auto px-6 max-w-5xl pb-20">
+                <div className="space-y-20">
+                    {/* Area 1 */}
+                    <section className="scroll-mt-24" id="natural-products">
+                        <h2 className="text-3xl font-bold mb-6 text-navy-900 border-b border-gray-200 pb-3">Biosynthesis of natural products</h2>
+                        <div className="flex flex-col md:flex-row gap-8 items-start">
+                            <div className="md:w-2/3">
+                                <p className="text-gray-700 leading-relaxed mb-4 text-lg">
+                                    Microbial specialized metabolites exhibit remarkable structural complexity and diverse bioactivities, making them a rich source of pharmaceuticals and chemical probes. The assembly of these molecules depends on highly coordinated biosynthetic enzymes that construct core scaffolds and introduce precise tailoring modifications.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed mb-4 text-lg">
+                                    Advances in genome sequencing have revealed that many microorganisms encode far more biosynthetic capacity than is reflected in their known metabolites. In particular, numerous cryptic or silent biosynthetic gene clusters (BGCs) remain uncharacterized. These hidden pathways represent a substantial reservoir of unexplored enzymatic chemistry.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed text-lg">
+                                    In our lab, we maintain a collection of unique microbial strains. We sequence and mine their genomes to identify cryptic BGCs, followed by functional characterization using chemical, biochemical, and genetic approaches. By activating and reconstructing these pathways, we uncover new scaffold-forming and tailoring enzymes, define their catalytic mechanisms, and expand the known repertoire of enzymatic transformations in nature.
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
+                                <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
+                                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                                    <li>Cryptic biosynthetic gene clusters (BGCs)</li>
+                                    <li>Scaffold-forming & tailoring enzymes</li>
+                                    <li>Genome mining & functional characterization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Area 2 */}
+                    <section className="scroll-mt-24" id="artificial-pathways">
+                        <h2 className="text-3xl font-bold mb-6 text-navy-900 border-b border-gray-200 pb-3">Design of artificial biosynthetic pathways</h2>
+                        <div className="flex flex-col md:flex-row gap-8 items-start">
+                            <div className="md:w-2/3">
+                                <p className="text-gray-700 leading-relaxed mb-4 text-lg">
+                                    Many clinically important drugs are derived from natural product scaffolds that have been chemically modified to improve potency or pharmacokinetic properties. Recent advances in DNA synthesis, genome editing, and pathway engineering now allow us to redesign biosynthesis at the genetic level.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed mb-4 text-lg">
+                                    We are developing strategies to engineer or create biosynthetic pathways to generate natural product derivatives and entirely new ("non-natural") chemical scaffolds. This approach involves modular recombination of biosynthetic gene clusters, as well as enzymatic or non-enzymatic coupling of pathway intermediates.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed text-lg">
+                                    By merging distinct biosynthetic logics, we aim to create artificial pathways that expand the chemical space. Ultimately, this work seeks to harness nature's catalytic machinery in a programmable manner, enabling the scalable production of structurally novel compounds with potential therapeutic value.
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
+                                <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
+                                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                                    <li>Pathway engineering & DNA synthesis</li>
+                                    <li>Modular recombination of BGCs</li>
+                                    <li>"Non-natural" chemical scaffolds</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Area 3 */}
+                    <section className="scroll-mt-24" id="cyclic-dinucleotides">
+                        <h2 className="text-3xl font-bold mb-6 text-navy-900 border-b border-gray-200 pb-3">Cyclic dinucleotide–mediated bacterial pathogenesis</h2>
+                        <div className="flex flex-col md:flex-row gap-8 items-start">
+                            <div className="md:w-2/3">
+                                <p className="text-gray-700 leading-relaxed mb-4 text-lg">
+                                    Cyclic dinucleotides such as c-di-GMP and c-di-AMP have emerged as central second messengers in many clinically significant pathogens. These messengers regulate diverse processes including virulence factor expression, motility, biofilm formation, and stress responses. Accumulating evidence indicates that cyclic dinucleotide signaling is governed by complex networks of synthases, phosphodiesterases, receptors, and effector proteins.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed mb-4 text-lg">
+                                    These components operate in a tightly controlled spatiotemporal network, allowing bacteria to dynamically adapt to host environments. Our research aims to identify previously uncharacterized enzymes and effector proteins involved in cyclic dinucleotide signaling and to elucidate their mechanistic roles in infection and antibiotic resistance.
+                                </p>
+                                <p className="text-gray-700 leading-relaxed text-lg">
+                                    By dissecting these regulatory circuits at the molecular level, we seek to reveal new vulnerabilities in pathogenic bacteria. This work has the potential to inform the development of next-generation antimicrobial strategies, including inhibitors targeting signaling proteins and approaches to disrupt biofilm formation.
+                                </p>
+                            </div>
+                            <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
+                                <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
+                                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                                    <li>c-di-GMP and c-di-AMP signaling</li>
+                                    <li>Virulence, motility & biofilms</li>
+                                    <li>Novel antimicrobial strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
     )
 }

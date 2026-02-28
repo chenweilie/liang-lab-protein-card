@@ -1,164 +1,114 @@
 
-import ProfileLayout from '../layouts/ProfileLayout';
-
 export default function TeamPage() {
     return (
-        <ProfileLayout>
-            <h1 className="text-3xl font-bold text-navy-900 mb-4 pb-4 border-b border-gray-200">The Liang Group</h1>
-            <p className="text-gray-700 mb-12 text-lg">
-                We are a diverse team of researchers passionate about discovery. Our alumni have successfully transitioned into top-tier academic positions and leading roles in the biotech industry.
-            </p>
-
-            <section className="mb-16">
-                <h2 className="text-xl font-bold mb-6 text-navy-900 uppercase tracking-wide">Current Members</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                    {/* Wang Xuejiao */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/wang-xuejiao_research-fellow.tmb-thumb160.jpg" alt="Wang Xuejiao" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Wang Xuejiao</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">Research Fellow</p>
-                        </div>
-                    </div>
-                    {/* Hartono Candra */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/hartono-candra_research-fellow.tmb-thumb160.jpg" alt="Hartono Candra" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Hartono Candra</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">Research Fellow</p>
-                        </div>
-                    </div>
-                    {/* Sirus Kongjaroon */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/sirus-kongjaroon_research-assistant.tmb-thumb160.jpg" alt="Sirus Kongjaroon" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Sirus Kongjaroon</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">Research Assistant</p>
-                        </div>
-                    </div>
-                    {/* Chang Shu Ting */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/chang-shu-ting_research-assistant.tmb-thumb160.jpg" alt="Chang Shu Ting" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Chang Shu Ting</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">Research Assistant</p>
-                        </div>
-                    </div>
-                    {/* Tan Swee Ching */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/tan-swee-ching_research-assistant.tmb-thumb160.jpeg" alt="Tan Swee Ching" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Tan Swee Ching</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">Research Assistant</p>
-                        </div>
-                    </div>
-                    {/* Huang Huawei */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/huang-huawei_phd-student.tmb-thumb160.jpg" alt="Huang Huawei" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Huang Huawei</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">PhD Student</p>
-                        </div>
-                    </div>
-                    {/* Liao Yanghui */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/liao-yanghui_phd-student.tmb-thumb160.jpeg" alt="Liao Yanghui" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Liao Yanghui</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">PhD Student</p>
-                        </div>
-                    </div>
-                    {/* Mallar Dasgupta */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/mallar-dasgupta_phd-student.tmb-thumb160.jpg" alt="Mallar Dasgupta" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Mallar Dasgupta</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">PhD Student</p>
-                        </div>
-                    </div>
-                    {/* Srashti Khandelwal */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/srashti-khandelwal_phd-student.tmb-thumb160.jpg" alt="Srashti Khandelwal" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Srashti Khandelwal</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">PhD Student</p>
-                        </div>
-                    </div>
-                    {/* Sun Yunke */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/sun-yunke_phd-student.tmb-thumb160.jpg" alt="Sun Yunke" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">Sun Yunke</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">PhD Student</p>
-                        </div>
-                    </div>
-                    {/* You Jiaqi */}
-                    <div className="flex gap-4 items-start">
-                        <div className="w-20 h-20 bg-gray-200 rounded shrink-0 overflow-hidden">
-                            <img src="/images/team/you-jiaqi_phd-student.tmb-thumb160.jpg" alt="You Jiaqi" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-gray-900">You Jiaqi</h3>
-                            <p className="text-sm text-cyan-700 font-medium mb-1">PhD Student</p>
-                        </div>
-                    </div>
+        <main className="min-h-screen bg-white">
+            <div className="bg-navy-900 text-white py-16 md:py-20 mb-12">
+                <div className="container mx-auto px-6 max-w-5xl">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">The Liang Group</h1>
+                    <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
+                        We are a diverse team of researchers passionate about discovery. Our alumni have successfully transitioned into top-tier academic positions and leading roles in the biotech industry.
+                    </p>
                 </div>
-            </section>
+            </div>
 
-            <section>
-                <h2 className="text-xl font-bold mb-6 text-navy-900 uppercase tracking-wide">Alumni Success</h2>
-                <div className="bg-gray-50 rounded-lg p-6 border border-gray-100">
-                    <ul className="space-y-4">
-                        <li className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-3 last:border-0 last:pb-0">
-                            <div>
-                                <span className="font-bold text-gray-800">Dr. Alumni A</span>
-                                <span className="text-gray-500 text-sm ml-2">(Former PhD)</span>
+            <div className="container mx-auto px-6 max-w-5xl pb-20">
+                <section className="mb-20">
+                    <h2 className="text-2xl font-bold mb-8 text-navy-900 border-b border-gray-200 pb-3">Principal Investigator</h2>
+                    <div className="flex flex-col md:flex-row gap-8 items-start">
+                        <div className="w-48 h-48 bg-gray-200 rounded-lg shrink-0 overflow-hidden shadow-md">
+                            <img src="/images/profile-pic.webp" alt="Professor Zhaoxun Liang" className="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                            <h3 className="text-3xl font-bold text-gray-900 mb-2">Zhao-Xun Liang</h3>
+                            <p className="text-lg text-cyan-600 font-medium mb-4">Professor, Nanyang Technological University</p>
+                            <p className="text-gray-700 leading-relaxed mb-4 max-w-2xl">
+                                Prof. Liang leads the lab at the School of Biological Sciences, NTU Singapore. His research integrates enzymology, pathway engineering, and synthetic microbiology to explore natural product biosynthesis and bacterial pathogenesis.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="mb-20">
+                    <h2 className="text-2xl font-bold mb-8 text-navy-900 border-b border-gray-200 pb-3">Current Members</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            { name: 'Wang Xuejiao', role: 'Research Fellow', img: 'wang-xuejiao_research-fellow.tmb-thumb160.jpg' },
+                            { name: 'Hartono Candra', role: 'Research Fellow', img: 'hartono-candra_research-fellow.tmb-thumb160.jpg' },
+                            { name: 'Tan Swee Ching', role: 'Research Assistant', img: 'tan-swee-ching_research-assistant.tmb-thumb160.jpeg' },
+                            { name: 'Chang Shu Ting', role: 'Research Assistant', img: 'chang-shu-ting_research-assistant.tmb-thumb160.jpg' },
+                            { name: 'Sirus Kongjaroon', role: 'Research Assistant', img: 'sirus-kongjaroon_research-assistant.tmb-thumb160.jpg' },
+                            { name: 'Liao Yanghui', role: 'PhD Student', img: 'liao-yanghui_phd-student.tmb-thumb160.jpeg' },
+                            { name: 'Huang Huawei', role: 'PhD Student', img: 'huang-huawei_phd-student.tmb-thumb160.jpg' },
+                            { name: 'Srashti Khandelwal', role: 'PhD Student', img: 'srashti-khandelwal_phd-student.tmb-thumb160.jpg' },
+                            { name: 'Sun Yunke', role: 'PhD Student', img: 'sun-yunke_phd-student.tmb-thumb160.jpg' },
+                            { name: 'You Jiaqi', role: 'PhD Student', img: 'you-jiaqi_phd-student.tmb-thumb160.jpg' },
+                        ].map((member, i) => (
+                            <div key={i} className="flex gap-4 items-center bg-gray-50 p-4 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                <div className="w-16 h-16 bg-gray-200 rounded-full shrink-0 overflow-hidden border-2 border-white shadow-sm">
+                                    <img src={`/images/team/${member.img}`} alt={member.name} className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(member.name) + '&background=e5e7eb&color=374151' }} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-gray-900">{member.name}</h3>
+                                    <p className="text-sm text-cyan-600 font-medium">{member.role}</p>
+                                </div>
                             </div>
-                            <div className="text-sm text-cyan-700 font-semibold mt-1 sm:mt-0">
-                                Postdoc, Harvard Medical School
-                            </div>
-                        </li>
-                        <li className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-3 last:border-0 last:pb-0">
-                            <div>
-                                <span className="font-bold text-gray-800">Dr. Alumni B</span>
-                                <span className="text-gray-500 text-sm ml-2">(Former Postdoc)</span>
-                            </div>
-                            <div className="text-sm text-cyan-700 font-semibold mt-1 sm:mt-0">
-                                Senior Scientist, WuXi AppTec
-                            </div>
-                        </li>
-                        <li className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-3 last:border-0 last:pb-0">
-                            <div>
-                                <span className="font-bold text-gray-800">Dr. Alumni C</span>
-                                <span className="text-gray-500 text-sm ml-2">(Former PhD)</span>
-                            </div>
-                            <div className="text-sm text-cyan-700 font-semibold mt-1 sm:mt-0">
-                                Director, BGI Genomics
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </ProfileLayout>
+                        ))}
+                    </div>
+                </section>
+
+                <section>
+                    <h2 className="text-2xl font-bold mb-8 text-navy-900 border-b border-gray-200 pb-3">Alumni</h2>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left text-sm whitespace-nowrap">
+                            <thead className="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th className="px-4 py-3 font-semibold text-gray-900">Name</th>
+                                    <th className="px-4 py-3 font-semibold text-gray-900">Year</th>
+                                    <th className="px-4 py-3 font-semibold text-gray-900">Topic / Title</th>
+                                    <th className="px-4 py-3 font-semibold text-gray-900">Current Position</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                {[
+                                    { name: 'Rao Feng', year: '2007-2011', topic: 'Catalysis and regulation of cyclic dinucleotide...', pos: 'Professor, Science & Technology University of South China' },
+                                    { name: 'Qi Yaning', year: '2007-2011', topic: 'Structure and function of GGDEF-EAL didomain...', pos: 'University of Macau' },
+                                    { name: 'Kong Rong', year: '2007-2011', topic: 'Proteins in early stage of enediyne biosynthesis', pos: 'Procter & Gamble Corporation, Singapore' },
+                                    { name: 'Ela Murugan', year: '2008-2012', topic: 'Iterative polyketide synthase in enediyne...', pos: 'Director, PrEI’s Technologies Pte Ltd' },
+                                    { name: 'Sun Huihua', year: '2008-2012', topic: 'Polyketide synthesis in enediyne and mellein', pos: 'Shanghai, China' },
+                                    { name: 'Lawrence Ho Chun Long', year: '2009-2013', topic: 'Cyclic di-GMP fluorescent biosensors', pos: 'Assoc Prof, Shenzhen Advanced SynBiol Institute' },
+                                    { name: 'Liew Chong Wai', year: '2009-2013', topic: 'Structural studies of enzymes from enediyne...', pos: 'A*STAR, Singapore' },
+                                    { name: 'Chen Ming Wei', year: '2009-2013', topic: 'Enzymes regulating life style and cell wall...', pos: 'School of biological Sciences, NTU' },
+                                    { name: 'Mary Chuah', year: '2010-2014', topic: 'Cyclic di-GMP signaling in Bacillus subtilis', pos: 'United Kingdom' },
+                                    { name: 'Alolika Cakrabortti', year: '2012-2016', topic: 'Genomics-guided discovery of microbial metabolites', pos: 'Research scientist, Lonza Group Ltd, Singapore' },
+                                    { name: 'Prabhadevi Venkataramani', year: '2012-2016', topic: 'Regulation of two-component signaling by PilZ', pos: 'Research fellow, National Institute of Health, USA' },
+                                    { name: 'Cheang Qing Wei', year: '2013-2017', topic: 'Cyclic di-GMP signaling through PilZ adaptor', pos: 'Scientist, ThermoFisher, Singapore' },
+                                    { name: 'Pang Li Mei', year: '2014-2018', topic: 'Bioprospecting local actinomycetes', pos: 'A*STAR, Singapore' },
+                                    { name: 'Low Zhen Jie', year: '2014-2018', topic: 'Natural product biosynthesis in actinomycetes', pos: 'Research scientist, Waters Inc. Singapore' },
+                                    { name: 'Xin Ling Yi', year: '2014-2018', topic: 'MapZ-mediated c-di-GMP signaling in P. aeruginosa', pos: 'Tianjin, China' },
+                                    { name: 'Hartono Candra', year: '2018-2022', topic: 'Genome-guided discovery of natural products', pos: 'Research fellow, NTU' },
+                                    { name: 'Sean Lee', year: '2020-2024', topic: 'Heterologous expression in Streptomyces hosts', pos: 'Singapore Botanical Garden' },
+                                    { name: 'Jamila Oppong (MS)', year: '2013-2014', topic: 'Molecular mechanism of cyclic di-GMP signaling', pos: 'Ph.D. student, Manchester University, UK' },
+                                    { name: 'Daryn Tan Fu Ern (MS)', year: '2018-2019', topic: 'Genome-guided natural product discovery', pos: 'Secondary school teacher, Singapore' },
+                                    { name: 'Rachel Chua (MS)', year: '2018-2020', topic: 'Streptomyces sp. MD102 as heterologous host', pos: 'Research staff, NUS' },
+                                    { name: 'Chong Zhi Soon', year: '2018-2020', topic: 'Genome-guided discovery of natural products', pos: 'NUS' },
+                                    { name: 'Howard Saw', year: '2017-2019', topic: 'Genome-guided discovery of microbial natural products', pos: 'Singapore' },
+                                    { name: 'Yang Lifeng', year: '2012-2014', topic: 'Engineering of nitrile reductase', pos: 'Singapore' },
+                                    { name: 'Xu Linghui', year: '2010-2014', topic: 'PilZ protein-mediated bacterial signaling', pos: 'Professor, Southern China Agricultural University' },
+                                    { name: 'Wu Long', year: '2011', topic: 'Bacterial signaling mediated by cyclic di-AMP', pos: 'Xi’an, China' },
+                                    { name: 'Ma Guang-Lei', year: '2018-2023', topic: 'Heterologous expression of cannabinoid pathway', pos: 'Assoc Prof, Zhejiang University, China' },
+                                ].map((alumnus, idx) => (
+                                    <tr key={idx} className="hover:bg-gray-50/50">
+                                        <td className="px-4 py-3 font-medium text-gray-900">{alumnus.name}</td>
+                                        <td className="px-4 py-3 text-gray-600">{alumnus.year}</td>
+                                        <td className="px-4 py-3 text-gray-600 max-w-xs truncate" title={alumnus.topic}>{alumnus.topic}</td>
+                                        <td className="px-4 py-3 text-cyan-700">{alumnus.pos}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
     )
 }

@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
     "molstar": "^4.14.0",
     "playwright-core": "^1.58.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "style-to-js": "^1.1.21"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",

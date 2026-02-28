@@ -1,21 +1,29 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply antialiased text-gray-900 bg-white;
+    @apply antialiased text-gray-800 bg-white;
+    font-family: 'Inter', system-ui, sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-navy-900;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-navy-900 font-bold tracking-tight;
   }
 }
 
-/* Custom Navy Color for academic theme */
-.text-navy-900 {
-  color: #0f172a; /* violent-900 substitute or adjust to specific navy */
-}
-.bg-navy-900 {
-  background-color: #0f172a;
+@layer components {
+  .section-container {
+    @apply container mx-auto px-6 max-w-6xl py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-6 rounded-md transition-colors duration-200 inline-flex items-center;
+  }
 }
