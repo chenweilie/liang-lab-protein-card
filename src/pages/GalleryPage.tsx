@@ -28,18 +28,18 @@ export default function GalleryPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
-                        { file: 'event-1.jpg', caption: 'Annual Lab Retreat' },
-                        { file: 'event-2.jpg', caption: 'International Conference Presentation' },
-                        { file: 'event-3.jpeg', caption: 'Celebrating Recent Publications' },
-                        { file: 'event-4.jpeg', caption: 'PhD Graduation Ceremony' },
-                        { file: 'event-5.jpeg', caption: 'Poster Session at Gordon Research' },
-                        { file: 'event-6.jpeg', caption: 'Joint Seminar with Visiting Researchers' },
-                        { file: 'event-7.JPG', caption: 'Lab Team Building Activity' },
-                        { file: 'event-8.jpeg', caption: 'Year-end Gathering & Celebration' },
-                        { file: 'event-9.jpg', caption: 'Alumni Meetup in Singapore' },
-                        { file: 'event-10.JPG', caption: 'Welcoming New Lab Members' },
-                        { file: 'event-11.jpeg', caption: 'Group Photo after Research Symposium' },
-                        { file: 'event-12.jpeg', caption: 'Farewell Dinner for Graduating Students' }
+                        { file: 'event-1.jpg', caption: 'NTU Campus' },
+                        { file: 'event-2.jpg', caption: 'SBS Building' },
+                        { file: 'event-3.jpeg', caption: '2011 Group Photo' },
+                        { file: 'event-4.jpeg', caption: '2011 Convocation' },
+                        { file: 'event-5.jpeg', caption: '2012 Group Photo' },
+                        { file: 'event-6.jpeg', caption: '2014 Group Photo' },
+                        { file: 'event-7.JPG', caption: '2015 Group Photo' },
+                        { file: 'event-8.jpeg', caption: '2018 Group Photo' },
+                        { file: 'event-9.jpg', caption: '2021 Group Photo' },
+                        { file: 'event-10.JPG', caption: '2023 Group Photo' },
+                        { file: 'event-11.jpeg', caption: '2024 Group Photo' },
+                        { file: 'event-12.jpeg', caption: '2025 Group Photo' }
                     ].map((item, i) => (
                         <div key={item.file} className="group relative aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                             <img
