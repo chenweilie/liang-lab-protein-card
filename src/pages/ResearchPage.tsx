@@ -41,13 +41,23 @@ export default function ResearchPage() {
                                     In our lab, we maintain a collection of unique microbial strains. We sequence and mine their genomes to identify cryptic BGCs, followed by functional characterization using chemical, biochemical, and genetic approaches. By activating and reconstructing these pathways, we uncover new scaffold-forming and tailoring enzymes, define their catalytic mechanisms, and expand the known repertoire of enzymatic transformations in nature.
                                 </p>
                             </div>
-                            <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
-                                <ul className="list-disc list-inside text-gray-600 space-y-2">
-                                    <li>Cryptic biosynthetic gene clusters (BGCs)</li>
-                                    <li>Scaffold-forming & tailoring enzymes</li>
-                                    <li>Genome mining & functional characterization</li>
-                                </ul>
+                            <div className="md:w-1/3 space-y-6">
+                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm">
+                                    <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
+                                    <ul className="list-disc list-inside text-gray-600 space-y-2">
+                                        <li>Cryptic biosynthetic gene clusters (BGCs)</li>
+                                        <li>Scaffold-forming & tailoring enzymes</li>
+                                        <li>Genome mining & functional characterization</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-white rounded-xl p-2 border border-gray-100 shadow-lg overflow-hidden group">
+                                    <img
+                                        src="/images/research/biosynthesis-pathway.png"
+                                        alt="Natural Product Biosynthesis Pathway"
+                                        className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <p className="text-xs text-gray-400 mt-2 text-center italic">Example: Biosynthesis of complex microbial metabolites</p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -67,14 +77,23 @@ export default function ResearchPage() {
                                     By merging distinct biosynthetic logics, we aim to create artificial pathways that expand the chemical space. Ultimately, this work seeks to harness nature's catalytic machinery in a programmable manner, enabling the scalable production of structurally novel compounds with potential therapeutic value.
                                 </p>
                             </div>
-                            <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
-                                <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
-                                    <li>Pathway engineering & DNA synthesis</li>
-                                    <li>Modular recombination of BGCs</li>
-                                    <li>"Non-natural" chemical scaffolds</li>
-                                </ul>
-                                <img src="/images/research/research-venn.png" alt="Research Venn Diagram" className="w-full h-auto mt-4 rounded-lg mix-blend-multiply" />
+                            <div className="md:w-1/3 space-y-6">
+                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm">
+                                    <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
+                                    <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                                        <li>Pathway engineering & DNA synthesis</li>
+                                        <li>Modular recombination of BGCs</li>
+                                        <li>"Non-natural" chemical scaffolds</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-lg overflow-hidden group">
+                                    <img
+                                        src="/images/research/pathway-engineering.png"
+                                        alt="Metabolic Engineering Cycle"
+                                        className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <p className="text-xs text-gray-400 mt-2 text-center italic">Design-Build-Test-Learn cycle in pathway engineering</p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -94,13 +113,23 @@ export default function ResearchPage() {
                                     By dissecting these regulatory circuits at the molecular level, we seek to reveal new vulnerabilities in pathogenic bacteria. This work has the potential to inform the development of next-generation antimicrobial strategies, including inhibitors targeting signaling proteins and approaches to disrupt biofilm formation.
                                 </p>
                             </div>
-                            <div className="md:w-1/3 bg-gray-50 rounded-xl p-6 border border-gray-100">
-                                <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
-                                <ul className="list-disc list-inside text-gray-600 space-y-2">
-                                    <li>c-di-GMP and c-di-AMP signaling</li>
-                                    <li>Virulence, motility & biofilms</li>
-                                    <li>Novel antimicrobial strategies</li>
-                                </ul>
+                            <div className="md:w-1/3 space-y-6">
+                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm">
+                                    <h3 className="font-bold text-cyan-700 mb-3 text-lg">Key Focus Areas</h3>
+                                    <ul className="list-disc list-inside text-gray-600 space-y-2">
+                                        <li>c-di-GMP and c-di-AMP signaling</li>
+                                        <li>Virulence, motility & biofilms</li>
+                                        <li>Novel antimicrobial strategies</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-lg overflow-hidden group">
+                                    <img
+                                        src="/images/research/cdigmp-structure.png"
+                                        alt="c-di-GMP Molecular Structure"
+                                        className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <p className="text-xs text-gray-400 mt-2 text-center italic">Chemical structure of the c-di-GMP second messenger</p>
+                                </div>
                             </div>
                         </div>
                     </section>
