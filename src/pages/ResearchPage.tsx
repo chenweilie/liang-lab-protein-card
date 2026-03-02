@@ -15,12 +15,17 @@ export default function ResearchPage() {
             </div>
 
             <div className="container mx-auto px-6 max-w-5xl pb-20">
-                <div className="space-y-20">
+                <div className="space-y-24">
                     {/* Area 1 */}
                     <section className="scroll-mt-24" id="natural-products">
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="text-xs font-bold uppercase tracking-widest text-cyan-600">Area</span>
+                            <span className="text-5xl font-extrabold text-gray-100 leading-none select-none">01</span>
+                            <div className="flex-1 h-px bg-gray-100"></div>
+                        </div>
                         <div className="flex flex-col md:flex-row gap-10 items-start">
-                            <div className="md:flex-1">
-                                <h2 className="text-3xl font-bold mb-5 text-navy-900 border-b border-gray-200 pb-3">Biosynthesis of natural products</h2>
+                            <div className="md:flex-1 pl-5 border-l-2 border-cyan-500">
+                                <h2 className="text-3xl font-bold mb-5 text-navy-900">Biosynthesis of natural products</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4 text-lg">
                                     Microbial specialized metabolites exhibit remarkable structural complexity and diverse bioactivities, making them a rich source of pharmaceuticals and chemical probes. The assembly of these molecules depends on highly coordinated biosynthetic enzymes that construct core scaffolds and introduce precise tailoring modifications.
                                 </p>
@@ -31,13 +36,16 @@ export default function ResearchPage() {
                                     In our lab, we maintain a collection of unique microbial strains. We sequence and mine their genomes to identify cryptic BGCs, followed by functional characterization using chemical, biochemical, and genetic approaches. By activating and reconstructing these pathways, we uncover new scaffold-forming and tailoring enzymes, define their catalytic mechanisms, and expand the known repertoire of enzymatic transformations in nature.
                                 </p>
                             </div>
-                            <div className="md:w-64 shrink-0">
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm">
-                                    <h3 className="font-bold text-cyan-700 mb-3">Key Focus Areas</h3>
-                                    <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                        <li>Cryptic biosynthetic gene clusters (BGCs)</li>
-                                        <li>Scaffold-forming & tailoring enzymes</li>
-                                        <li>Genome mining & functional characterization</li>
+                            <div className="md:w-60 shrink-0">
+                                <div className="bg-navy-900 rounded-xl p-6 shadow-sm text-white">
+                                    <h3 className="font-bold text-cyan-400 mb-4 text-xs uppercase tracking-wide">Key Focus Areas</h3>
+                                    <ul className="space-y-3 text-sm">
+                                        {['Cryptic biosynthetic gene clusters (BGCs)', 'Scaffold-forming & tailoring enzymes', 'Genome mining & functional characterization'].map((item) => (
+                                            <li key={item} className="flex items-start gap-2">
+                                                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0"></span>
+                                                <span className="text-gray-200">{item}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
@@ -46,9 +54,14 @@ export default function ResearchPage() {
 
                     {/* Area 2 */}
                     <section className="scroll-mt-24" id="artificial-pathways">
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="text-xs font-bold uppercase tracking-widest text-cyan-600">Area</span>
+                            <span className="text-5xl font-extrabold text-gray-100 leading-none select-none">02</span>
+                            <div className="flex-1 h-px bg-gray-100"></div>
+                        </div>
                         <div className="flex flex-col md:flex-row gap-10 items-start">
-                            <div className="md:flex-1">
-                                <h2 className="text-3xl font-bold mb-5 text-navy-900 border-b border-gray-200 pb-3">Design of artificial biosynthetic pathways</h2>
+                            <div className="md:flex-1 pl-5 border-l-2 border-cyan-500">
+                                <h2 className="text-3xl font-bold mb-5 text-navy-900">Design of artificial biosynthetic pathways</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4 text-lg">
                                     Many clinically important drugs are derived from natural product scaffolds that have been chemically modified to improve potency or pharmacokinetic properties. Recent advances in DNA synthesis, genome editing, and pathway engineering now allow us to redesign biosynthesis at the genetic level.
                                 </p>
@@ -59,13 +72,16 @@ export default function ResearchPage() {
                                     By merging distinct biosynthetic logics, we aim to create artificial pathways that expand the chemical space. Ultimately, this work seeks to harness nature's catalytic machinery in a programmable manner, enabling the scalable production of structurally novel compounds with potential therapeutic value.
                                 </p>
                             </div>
-                            <div className="md:w-64 shrink-0">
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm">
-                                    <h3 className="font-bold text-cyan-700 mb-3">Key Focus Areas</h3>
-                                    <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                        <li>Pathway engineering & DNA synthesis</li>
-                                        <li>Modular recombination of BGCs</li>
-                                        <li>"Non-natural" chemical scaffolds</li>
+                            <div className="md:w-60 shrink-0">
+                                <div className="bg-navy-900 rounded-xl p-6 shadow-sm text-white">
+                                    <h3 className="font-bold text-cyan-400 mb-4 text-xs uppercase tracking-wide">Key Focus Areas</h3>
+                                    <ul className="space-y-3 text-sm">
+                                        {['Pathway engineering & DNA synthesis', 'Modular recombination of BGCs', '"Non-natural" chemical scaffolds'].map((item) => (
+                                            <li key={item} className="flex items-start gap-2">
+                                                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0"></span>
+                                                <span className="text-gray-200">{item}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
@@ -74,9 +90,14 @@ export default function ResearchPage() {
 
                     {/* Area 3 */}
                     <section className="scroll-mt-24" id="cyclic-dinucleotides">
+                        <div className="flex items-center gap-3 mb-8">
+                            <span className="text-xs font-bold uppercase tracking-widest text-cyan-600">Area</span>
+                            <span className="text-5xl font-extrabold text-gray-100 leading-none select-none">03</span>
+                            <div className="flex-1 h-px bg-gray-100"></div>
+                        </div>
                         <div className="flex flex-col md:flex-row gap-10 items-start">
-                            <div className="md:flex-1">
-                                <h2 className="text-3xl font-bold mb-5 text-navy-900 border-b border-gray-200 pb-3">Cyclic dinucleotide–mediated bacterial pathogenesis</h2>
+                            <div className="md:flex-1 pl-5 border-l-2 border-cyan-500">
+                                <h2 className="text-3xl font-bold mb-5 text-navy-900">Cyclic dinucleotide–mediated bacterial pathogenesis</h2>
                                 <p className="text-gray-700 leading-relaxed mb-4 text-lg">
                                     Cyclic dinucleotides such as c-di-GMP and c-di-AMP have emerged as central second messengers in many clinically significant pathogens. These messengers regulate diverse processes including virulence factor expression, motility, biofilm formation, and stress responses. Accumulating evidence indicates that cyclic dinucleotide signaling is governed by complex networks of synthases, phosphodiesterases, receptors, and effector proteins.
                                 </p>
@@ -87,13 +108,16 @@ export default function ResearchPage() {
                                     By dissecting these regulatory circuits at the molecular level, we seek to reveal new vulnerabilities in pathogenic bacteria. This work has the potential to inform the development of next-generation antimicrobial strategies, including inhibitors targeting signaling proteins and approaches to disrupt biofilm formation.
                                 </p>
                             </div>
-                            <div className="md:w-64 shrink-0">
-                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 shadow-sm">
-                                    <h3 className="font-bold text-cyan-700 mb-3">Key Focus Areas</h3>
-                                    <ul className="list-disc list-inside text-gray-600 space-y-2 text-sm">
-                                        <li>c-di-GMP and c-di-AMP signaling</li>
-                                        <li>Virulence, motility & biofilms</li>
-                                        <li>Novel antimicrobial strategies</li>
+                            <div className="md:w-60 shrink-0">
+                                <div className="bg-navy-900 rounded-xl p-6 shadow-sm text-white">
+                                    <h3 className="font-bold text-cyan-400 mb-4 text-xs uppercase tracking-wide">Key Focus Areas</h3>
+                                    <ul className="space-y-3 text-sm">
+                                        {['c-di-GMP and c-di-AMP signaling', 'Virulence, motility & biofilms', 'Novel antimicrobial strategies'].map((item) => (
+                                            <li key={item} className="flex items-start gap-2">
+                                                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0"></span>
+                                                <span className="text-gray-200">{item}</span>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>

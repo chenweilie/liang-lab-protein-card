@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -14,6 +14,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import '@fontsource/inter';
 
 export default function App() {
+  const location = useLocation()
   return (
     <div className="min-h-screen font-sans">
       <Navbar />
@@ -29,7 +30,7 @@ export default function App() {
         <Route path="/compare" element={<ComparePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
+      {location.pathname !== '/research' && <Footer />}
     </div>
   )
 }
