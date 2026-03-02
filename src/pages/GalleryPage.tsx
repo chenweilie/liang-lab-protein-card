@@ -3,12 +3,11 @@ export default function GalleryPage() {
         <main className="min-h-screen bg-white">
             <div className="bg-navy-950 text-white py-24 md:py-32 mb-16 relative overflow-hidden">
                 <div className="absolute inset-0 z-0 bg-gradient-to-br from-navy-900 via-navy-950 to-[#000d1f]"></div>
-                <div className="absolute inset-0 z-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60"></div>
 
                 <div className="container mx-auto px-6 max-w-5xl relative z-10">
                     <div className="max-w-3xl">
-                        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-lg">Gallery</h1>
-                        <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-4 drop-shadow font-light">
+                        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-white">Gallery</h1>
+                        <p className="text-xl md:text-2xl text-gray-100 leading-relaxed mb-4 font-light">
                             Moments and memories from the Liang Laboratory.
                         </p>
                     </div>
