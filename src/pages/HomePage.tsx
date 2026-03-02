@@ -5,22 +5,15 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-navy-950 text-white py-32 md:py-48 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero-bg.png"
-            alt="Molecular Network Background"
-            className="w-full h-full object-cover opacity-40 mix-blend-screen"
-          />
-          {/* Gradient Overlays for blending to background color and text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent"></div>
-        </div>
+        {/* Subtle depth gradient — no misleading molecular art */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-navy-900 via-navy-950 to-[#000d1f]"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent opacity-60"></div>
 
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight drop-shadow-lg">
-              Discovering Nature's <br className="hidden md:block" />
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+              <span className="text-white drop-shadow-[0_2px_16px_rgba(255,255,255,0.25)]">Discovering Nature's</span>
+              <br className="hidden md:block" />
               <span className="text-cyan-400 drop-shadow-md">Chemical Repertoire</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-12 drop-shadow font-light">

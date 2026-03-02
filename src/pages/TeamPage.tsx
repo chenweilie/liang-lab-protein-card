@@ -3,17 +3,8 @@ export default function TeamPage() {
     return (
         <main className="min-h-screen bg-white">
             <div className="bg-navy-950 text-white py-24 md:py-32 mb-16 relative overflow-hidden">
-                {/* Background Image with Overlay */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="/images/hero-bg.png"
-                        alt="Team Background"
-                        className="w-full h-full object-cover opacity-40 mix-blend-screen"
-                    />
-                    {/* Gradient Overlays for blending */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent md:w-3/4"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
-                </div>
+                <div className="absolute inset-0 z-0 bg-gradient-to-br from-navy-900 via-navy-950 to-[#000d1f]"></div>
+                <div className="absolute inset-0 z-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60"></div>
 
                 <div className="container mx-auto px-6 max-w-5xl relative z-10">
                     <div className="max-w-3xl">
@@ -46,16 +37,17 @@ export default function TeamPage() {
                     <h2 className="text-2xl font-bold mb-8 text-navy-900 border-b border-gray-200 pb-3">Current Members</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { name: 'Wang Xuejiao', role: 'Research Fellow', img: 'member-1.jpeg' },
-                            { name: 'Hartono Candra', role: 'Research Fellow', img: 'member-2.jpeg' },
-                            { name: 'Tan Swee Ching', role: 'Research Assistant', img: 'member-3.jpeg' },
-                            { name: 'Chang Shu Ting', role: 'Research Assistant', img: 'member-4.jpeg' },
-                            { name: 'Sirus Kongjaroon', role: 'Research Assistant', img: 'member-5.jpeg' },
-                            { name: 'Liao Yanghui', role: 'PhD Student', img: 'member-6.jpeg' },
-                            { name: 'Huang Huawei', role: 'PhD Student', img: 'member-7.jpeg' },
-                            { name: 'Srashti Khandelwal', role: 'PhD Student', img: 'member-8.jpeg' },
-                            { name: 'Sun Yunke', role: 'PhD Student', img: 'member-9.jpeg' },
-                            { name: 'You Jiaqi', role: 'PhD Student', img: 'member-10.jpeg' },
+                            { name: 'Wang Xuejiao', role: 'Research Fellow', img: 'wang-xuejiao_research-fellow.tmb-thumb160.jpg' },
+                            { name: 'Hartono Candra', role: 'Research Fellow', img: 'hartono-candra_research-fellow.tmb-thumb160.jpg' },
+                            { name: 'Tan Swee Ching', role: 'Research Assistant', img: 'tan-swee-ching_research-assistant.tmb-thumb160.jpeg' },
+                            { name: 'Chang Shu Ting', role: 'Research Assistant', img: 'chang-shu-ting_research-assistant.tmb-thumb160.jpg' },
+                            { name: 'Sirus Kongjaroon', role: 'Research Assistant', img: 'sirus-kongjaroon_research-assistant.tmb-thumb160.jpg' },
+                            { name: 'Liao Yanghui', role: 'PhD Student', img: 'liao-yanghui_phd-student.tmb-thumb160.jpeg' },
+                            { name: 'Huang Huawei', role: 'PhD Student', img: 'huang-huawei_phd-student.tmb-thumb160.jpg' },
+                            { name: 'Mallar Dasgupta', role: 'PhD Student', img: 'mallar-dasgupta_phd-student.tmb-thumb160.jpg' },
+                            { name: 'Srashti Khandelwal', role: 'PhD Student', img: 'srashti-khandelwal_phd-student.tmb-thumb160.jpg' },
+                            { name: 'Sun Yunke', role: 'PhD Student', img: 'sun-yunke_phd-student.tmb-thumb160.jpg' },
+                            { name: 'You Jiaqi', role: 'PhD Student', img: 'you-jiaqi_phd-student.tmb-thumb160.jpg' },
                         ].map((member, i) => (
                             <div key={i} className="flex gap-4 items-center bg-gray-50 p-4 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                                 <div className="w-16 h-16 bg-gray-200 rounded-full shrink-0 overflow-hidden border-2 border-white shadow-sm">

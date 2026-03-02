@@ -22,20 +22,10 @@ export default function Navbar() {
           <NavLink to="/team">Team</NavLink>
           <NavLink to="/gallery">Gallery</NavLink>
           <NavLink to="/contact">Contact</NavLink>
-
-          <div className="h-4 w-px bg-gray-600 mx-1"></div>
-
-          <Link to="/tools" className="flex items-center gap-1.5 text-cyan-400 hover:text-white transition-colors">
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path fillRule="evenodd" d="M10 1c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zM8 7.25a.75.75 0 011.5 0v2.5h2.5a.75.75 0 010 1.5h-2.5v2.5a.75.75 0 01-1.5 0v-2.5h-2.5a.75.75 0 010-1.5h2.5v-2.5z" clipRule="evenodd" />
-            </svg>
-            Tools
-          </Link>
         </nav>
 
         {/* Mobile menu placeholder (simplified) */}
         <div className="md:hidden flex items-center gap-4">
-          <Link to="/tools" className="text-cyan-400 font-medium text-sm">Tools</Link>
           <button className="text-white hover:text-cyan-400">
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
