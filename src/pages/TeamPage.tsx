@@ -63,7 +63,7 @@ export default function TeamPage() {
                                     School of Biological Sciences, Nanyang Technological University
                                 </p>
                                 <p className="text-gray-700 leading-relaxed mb-6 max-w-2xl text-sm">
-                                    Prof. Liang leads the lab at the School of Biological Sciences, NTU Singapore. His research integrates enzymology, pathway engineering, and synthetic microbiology to explore natural product biosynthesis and bacterial pathogenesis.
+                                    Prof. Liang's laboratory uses an interdisciplinary approach to study the molecular basis of natural product biosynthesis and bacterial pathogenesis. His group has contributed to advancing our understanding of cyclic dinucleotide signaling and microbial secondary metabolite biosynthesis.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
                                     {[

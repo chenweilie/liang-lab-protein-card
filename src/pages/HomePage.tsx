@@ -52,7 +52,7 @@ export default function HomePage() {
                 School of Biological Sciences, Nanyang Technological University
               </p>
               <p className="text-gray-600 leading-relaxed text-sm max-w-2xl mb-5">
-                Prof. Liang's research integrates enzymology, pathway engineering, and synthetic microbiology to explore natural product biosynthesis and bacterial pathogenesis. His group has made seminal contributions to understanding cyclic dinucleotide signaling and the biosynthesis of complex microbial metabolites including enediynes.
+                Prof. Liang's laboratory uses an interdisciplinary approach to study the molecular basis of natural product biosynthesis and bacterial pathogenesis. His group has contributed to advancing our understanding of cyclic dinucleotide signaling and microbial secondary metabolite biosynthesis.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-2">
                 {[
